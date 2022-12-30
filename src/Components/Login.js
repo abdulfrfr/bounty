@@ -20,11 +20,11 @@ function Login(){
 
     return(
         <div className="bg-gray-200 h-[100vh]">
-            <div className=" h-[10vh] w-[100vw] p-4 ">
+            <div className="p-4 ">
                 <div className="text-3xl font-bold">BOUNTY</div>
             </div>
-            <div className="h-[60vh] w-[100vw] ">
-                <div className="bg-white  w-[90vw] md:w-[35vw] m-[auto] my-[5rem] rounded-xl">
+            <div className="">
+                <div className="bg-white  w-[90vw] md:w-[37vw] lg:w-[35vw] m-[auto] my-[5rem] rounded-xl">
                     <div className=" text-blue-700 p-2 font-bold text-xl border-b-[1px] border-gray-300">LOGIN</div>
                     <div className='p-3 flex flex-col justify-between '>
                         <div className='mt-1'>
