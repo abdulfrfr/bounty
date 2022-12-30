@@ -24,7 +24,7 @@ function Login(){
                 <div className="text-3xl font-bold">BOUNTY</div>
             </div>
             <div className="h-[60vh] w-[100vw] ">
-                <div className="bg-white lg:w-[30vw] lg:h-[50vh] md:h-[57vh] md:w-[40vw]  w-[70vw] h-[55vh] m-[auto] my-[5rem] rounded-xl">
+                <div className="bg-white lg:w-[30vw] lg:h-[50vh] md:h-[57vh] md:w-[40vw]  w-[85vw] h-[55vh] m-[auto] my-[5rem] rounded-xl">
                     <div className=" text-blue-700 p-2 font-bold text-xl border-b-[1px] border-gray-300">LOGIN</div>
                     <div className='p-3 flex flex-col justify-between '>
                         <div className='mt-1'>
