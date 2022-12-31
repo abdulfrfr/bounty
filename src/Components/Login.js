@@ -22,9 +22,9 @@ function Login(){
 
     return(
         <section className="bg-gray-200 h-[100vh]">
-            <section className="p-5 md:px-10 flex justify-between items-center">
+            <section className="px-5 py-3 md:px-10 flex justify-between items-center">
                 <Link to="/">
-                    <div className="p-4 text-2xl text-gray-700 font-bold">BOUNTY</div>
+                    <div className="text-2xl text-gray-700 font-bold">BOUNTY</div>
                 </Link>
                 <div className='hidden md:block md:flex justify-between items-center'>
                     <div className='p-4 text-2xl text-blue-500 border-b-2 border-b-gray-200 hover:border-b-gray-700 cursor-pointer'>HOME</div>
@@ -33,7 +33,7 @@ function Login(){
                 </div>
                 <HiMenuAlt3 className='text-3xl block md:hidden'/>
             </section>
-            <section className="flex justify-center items-center my-[5rem] rounded-xl w-[100vw]">
+            <section className="flex justify-center items-center my-[2rem] rounded-xl w-[100vw]">
                 <div className=" ">
                     <div className="text-center text-gray-700 p-2 font-bold text-3xl border-b-[1px] border-gray-300">LOGIN</div>
                     <div className='p-3'>
