@@ -1,4 +1,4 @@
-import Home from './Hero'
+import Home from './Home'
 import About from './About'
 import Contact from './Contact'
 
@@ -6,14 +6,17 @@ import Contact from './Contact'
 const NavItems = [
     {
         title: "HOME",
-        page: Home
+        link: "/home",
+        page: Home,
     },
     {
         title: "ABOUT",
+        link: "/about",
         page: About
     },
     {
         title: "CONTACT",
+        link: "/contact",
         page: Contact
     }
 ]

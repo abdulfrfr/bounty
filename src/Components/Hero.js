@@ -5,37 +5,22 @@ import Home from './Home'
 import About from './About'
 import Contact from './Contact'
 
+import Nav from "./NavItems"
+
 
 function Hero(){
 
 const [styl, setStyl] = useState(0)
+const [navs, setNavs] = useState(Nav)
 
-    const NavItems = [
-        {
-            title: "HOME",
-            link: "/home",
-            page: Home, 
-            style: ""
-        },
-        {
-            title: "ABOUT",
-            link: "/about",
-            page: About
-        },
-        {
-            title: "CONTACT",
-            link: "/contact",
-            page: Contact
-        }
-    ]
 
     
-    const firstArr = NavItems.filter((nav, index) => index === 0 )
+    const firstArr = navs.filter((nav, index) => index === 0 )
         
     const [Page, setPage] = useState(firstArr)
 
     function getPage(index){
-     const newArr = NavItems.filter((page, indx) => indx === index)   
+     const newArr = navs.filter((page, indx) => indx === index)   
      setPage(newArr)
 
      setStyl(index)
@@ -50,10 +35,10 @@ const [styl, setStyl] = useState(0)
         <section className="bg-gray-200">
             <section className="md:px-15 lg:px-20 px-5 flex justify-between items-center">
                 <Link to="/">
-                    <div className="p-4 text-2xl text-gray-700 font-bold">BOUNTY</div>
+                    <div className="text-2xl text-gray-700 font-bold">BOUNTY</div>
                 </Link>   
                 <div className='hidden md:block md:flex justify-between items-center'>
-                    {NavItems.map((nav, index)=>{
+                    {navs.map((nav, index)=>{
                         return(
                             <div onClick={()=>{getPage(index)}} key={index} className={index === styl ? 'p-4 text-blue-500 border-b-2 border-b-gray-700  cursor-pointer text-2xl' : 'p-4 text-blue-500 border-b-2 border-b-gray-200 cursor-pointer text-2xl'}>{nav.title}</div>
                         )

@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {Link} from 'react-router-dom'
 import {BsArrowRight, BsAsterisk} from 'react-icons/bs'
-import {HiMenuAlt3} from 'react-icons/hi'
+import NavSide from './NavSide'
 
 function Login(){
     const [login, setLogin] = useState({
@@ -22,20 +22,10 @@ function Login(){
 
     return(
         <section className="bg-gray-200 h-[100vh]">
-            <section className="px-5 py-3 md:px-10 flex justify-between items-center">
-                <Link to="/">
-                    <div className="text-2xl text-gray-700 font-bold">BOUNTY</div>
-                </Link>
-                <div className='hidden md:block md:flex justify-between items-center'>
-                    <div className='p-4 text-2xl text-blue-500 border-b-2 border-b-gray-200 hover:border-b-gray-700 cursor-pointer'>HOME</div>
-                    <div className='p-4 text-2xl text-blue-500 border-b-2 border-b-gray-200 hover:border-b-gray-700 cursor-pointer'>ABOUT</div>
-                    <div className='p-4 text-2xl text-blue-500 border-b-2 border-b-gray-200 hover:border-b-gray-700 cursor-pointer'>CONTACT</div>
-                </div>
-                <HiMenuAlt3 className='text-3xl block md:hidden'/>
-            </section>
+            <NavSide/>
             <section className="flex justify-center items-center my-[2rem] rounded-xl w-[100vw]">
                 <div className=" ">
-                    <div className="text-center text-gray-700 p-2 font-bold text-3xl border-b-[1px] border-gray-300">LOGIN</div>
+                    <div className="text-start text-gray-700 p-2 font-bold text-xl md:text-3xl border-b-[1px] border-gray-300 w-[13rem]">LOGIN</div>
                     <div className='p-3'>
                         <div className='mt-1'>
                             <div className='mb-1 flex justify-start items-start'>Username<BsAsterisk className='text-[0.5rem] text-red-500'/></div>
