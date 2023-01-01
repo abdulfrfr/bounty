@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import {BsArrowRight, BsAsterisk} from 'react-icons/bs'
 import NavSide from './NavSide'
 
-function Login(){
+function Login({navs, setNavs, Page, setPage, styl, setStyl}){
     const [login, setLogin] = useState({
         username: "",
         password: ""
@@ -22,8 +22,7 @@ function Login(){
 
     return(
         <section className="bg-gray-200 h-[100vh]">
-            <NavSide/>
-            <section className="flex justify-center items-center my-[2rem] rounded-xl w-[100vw]">
+            <NavSide navs={navs} setNavs={setNavs} Page={Page} setPage={setPage} setStyl={setStyl} styl={styl}/>            <section className="flex justify-center items-center my-[2rem] rounded-xl w-[100vw]">
                 <div className=" ">
                     <div className="text-start text-gray-700 p-2 font-bold text-xl md:text-3xl border-b-[1px] border-gray-300 w-[13rem]">LOGIN</div>
                     <div className='p-3'>
@@ -44,7 +43,9 @@ function Login(){
                         </Link>
                         <div className='flex justify-center items-center mt-2'>
                             <div className='text-gray-700 mr-2'>Don't have an account?</div>
-                            <button className='text-blue-500 flex justify-center items-end'>Sign Up <BsArrowRight/></button>
+                            <Link to="/signup">
+                                <div className='text-blue-500 flex justify-center items-end'>Sign Up <BsArrowRight/></div>
+                            </Link>
                             
                         </div>
                     </div>
