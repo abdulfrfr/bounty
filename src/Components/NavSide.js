@@ -20,7 +20,8 @@ function NavSide({navs, setNavs, Page, setPage, styl, setStyl, show, setShow}){
        }
 
     return (
-        <section className="px-3 py-3 md:px-10 flex justify-between items-center">
+        <section className=''>
+            <section className="px-3 py-3 md:px-10 flex justify-between items-center fixed top-0 left-0 right-0">
                 <Logo navs={navs} setPage={setPage} setStyl={setStyl}/>
                 <div className='hidden md:block md:flex justify-between items-center'>
                     {navs.map((nav, index)=>{
@@ -42,6 +43,8 @@ function NavSide({navs, setNavs, Page, setPage, styl, setStyl, show, setShow}){
                 </div>
                 <HiMenuAlt3 className='text-3xl block md:hidden cursor-pointer'/>
         </section>
+        </section>
+        
     )
 }
 

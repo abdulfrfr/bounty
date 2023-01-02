@@ -24,7 +24,7 @@ function Signup({navs, setNavs, Page, setPage, styl, setStyl, show, setShow}){
         })
     }
     return(
-        <section className="bg-gray-200 h-[100vh]">
+        <section className="bg-gray-200 h-[100vh] pt-20">
             <NavSide navs={navs} setNavs={setNavs} Page={Page} setPage={setPage} setStyl={setStyl} styl={styl} show={show} setShow={setShow}/>
             <div className="block md:flex md:justify-center md:items-start">
             <div className="object-contain hidden md:flex md:justify-center md:items-center w-[50vw] h-[80vh]">

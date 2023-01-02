@@ -21,7 +21,7 @@ function Login({navs, setNavs, Page, setPage, styl, setStyl, show, setShow}){
     }
 
     return(
-        <section className="bg-gray-200 h-[100vh]">
+        <section className="bg-gray-200 h-[100vh] pt-20">
             <NavSide navs={navs} setNavs={setNavs} Page={Page} setPage={setPage} setStyl={setStyl} styl={styl} show={show} setShow={setShow}/>            <section className="flex justify-center items-center my-[2rem] rounded-xl w-[100vw]">
                 <div className=" ">
                     <div className="text-start text-gray-700 p-2 font-bold text-xl md:text-3xl border-b-[1px] border-gray-300 w-[13rem]">LOGIN</div>
