@@ -1,6 +1,3 @@
-import { useEffect, useState } from 'react'
-import {HiMenuAlt3} from 'react-icons/hi'
-import {Link} from 'react-router-dom'
 import NavSide from './NavSide'
 
 

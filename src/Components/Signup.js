@@ -4,7 +4,7 @@ import image from '../signup.jpg'
 import {Link} from 'react-router-dom'
 import {BsArrowRight} from 'react-icons/bs'
 
-function Signup({navs, setNavs, Page, setPage, styl, setStyl}){
+function Signup({navs, setNavs, Page, setPage, styl, setStyl, show, setShow}){
     const [signup, setSignup] = useState({
         firstName: "",
         lastName: "",
@@ -25,7 +25,7 @@ function Signup({navs, setNavs, Page, setPage, styl, setStyl}){
     }
     return(
         <section className="bg-gray-200 h-[100vh]">
-            <NavSide navs={navs} setNavs={setNavs} Page={Page} setPage={setPage} setStyl={setStyl} styl={styl}/>
+            <NavSide navs={navs} setNavs={setNavs} Page={Page} setPage={setPage} setStyl={setStyl} styl={styl} show={show} setShow={setShow}/>
             <div className="block md:flex md:justify-center md:items-start">
             <div className="object-contain hidden md:flex md:justify-center md:items-center w-[50vw] h-[80vh]">
                 <img src={image} alt="signup-img" className="w-[100%]"/>
