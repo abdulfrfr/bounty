@@ -20,10 +20,10 @@ function Dashboard(){
         <section className="bg-zinc-200 relative overflow-hidden">
         <div className=''>
             <div className="flex justtify-start items-start">
-                <div className="py-7 w-[17vw] h-[70vh] flex flex-col justify-between items-center">    
+                <div className="py-7 w-[17vw] h-[80vh] flex flex-col justify-between items-center">    
                     <Logo className=' px-5'/>
                     <button onClick={changeTrans} className="flex  justify-center md:justify-between items-center md:w-[13vw] rounded-[50%] md:rounded-3xl border-2 border-gray-300 bg-gray-200 md:px-5 md:py-2 px-2 w-[3rem] h-[3rem] text-gray-700"><div className='text-lg md:block hidden'>Compose</div><BsPlusLg className="text-2xl font-bold"/></button>
-                    <div className='h-[30vh] flex flex-col justify-between items-center'>
+                    <div className='h-[40vh] flex flex-col justify-between items-center'>
                         {
                          Items.map((item, index) => {
                                 return(
