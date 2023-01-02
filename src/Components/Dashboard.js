@@ -48,7 +48,7 @@ function Dashboard(){
                 </div>
             </div> 
         </div>
-        <div className={!trans ? 'translate-x-[80rem] transition-all duration-300 delay-100 bg-green-500 w-[83vw] h-[80vh] flex justify-center items-center absolute bottom-0 right-0rounded-t-3xl ' : 'rounded-t-3xl translate-x-[0] transition-all bg-green-500 w-[83vw] h-[80vh] flex justify-center items-center absolute bottom-0 right-0'}></div>
+        <div className={!trans ? 'translate-x-[95rem] transition-all duration-300 delay-100 bg-green-500 w-[83vw] h-[80vh] flex justify-center items-center absolute bottom-0 right-0rounded-t-3xl ' : 'rounded-t-3xl translate-x-[0] transition-all bg-green-500 w-[83vw] h-[80vh] flex justify-center items-center absolute bottom-0 right-0'}></div>
         </section>
     )
 }
