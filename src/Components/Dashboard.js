@@ -5,12 +5,14 @@ import Items from './DashboardItems'
 
 function Dashboard(){
     const [trans, setTrans] = useState(false)
+    const [id, setId] = useState(0)
     const [page, setPage] = useState(Items.filter((item, index) => index === 0))
 
     function getPage(indx){
        const newPage = Items.filter((item, index) => index === indx )
 
        setPage(newPage)
+       setId(indx)
     }
 
     function changeTrans(){
@@ -27,7 +29,7 @@ function Dashboard(){
                         {
                          Items.map((item, index) => {
                                 return(
-                                    <div onClick={() => getPage(index)} className='cursor-pointer flex justify-center md:justify-start items-center w-[20vw] md:w-[17vw] px-2 md:px-10'>
+                                    <div onClick={() => getPage(index)} className={index === id ? 'cursor-pointer flex justify-center md:justify-start items-center w-[20vw] md:w-[17vw] md:px-10 px-2 py-2 bg-blue-300 md:rounded-r-3xl' : 'cursor-pointer flex justify-center md:justify-start items-center w-[20vw] md:w-[17vw] md:px-10 px-2 py-2'}>
                                         <item.icon className='md:text-md text-xl'/>
                                         <div className='text-md ml-3 md:block hidden'>{item.title}</div> 
                                 
