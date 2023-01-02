@@ -1,4 +1,7 @@
 function Starred(){
+    return(
+        <section>Starred</section>
+    )
 
 }
 

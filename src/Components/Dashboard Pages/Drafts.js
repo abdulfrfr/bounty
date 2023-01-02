@@ -1,4 +1,7 @@
 function Drafts(){
+    return(
+        <section>Draft</section>
+    )
 
 }
 

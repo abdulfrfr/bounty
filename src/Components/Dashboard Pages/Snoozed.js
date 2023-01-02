@@ -1,4 +1,7 @@
 function Snoozed(){
+    return(
+        <section>Snoozed</section>
+    )
 
 }
 
