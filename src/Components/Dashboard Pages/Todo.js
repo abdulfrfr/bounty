@@ -81,7 +81,7 @@ function Todo(){
                                         {
                                             todo.inputs.map((input, index) => {
                                                 return(
-                                                    <div>{input}</div>
+                                                    <div className='bg-gray-100 rounded-xl py-1 px-2'>{input}</div>
                                                 )
                                             })
                                         }
