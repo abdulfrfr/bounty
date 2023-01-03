@@ -1,8 +1,8 @@
-function Starred(){
+function BlogPost(){
     return(
         <section>Starred</section>
     )
 
 }
 
-export default Starred
+export default BlogPost

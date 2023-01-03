@@ -13,11 +13,14 @@ function Dashboard(){
 
        setPage(newPage)
        setId(indx)
+
+       setTrans(false)
     }
 
     function changeTrans(){
         setTrans(!trans)
     }
+
     return(
         <section className="bg-zinc-200 relative overflow-hidden">
         <div className=''>
@@ -50,7 +53,14 @@ function Dashboard(){
                 </div>
             </div> 
         </div>
-        <div className={!trans ? 'translate-x-[95rem] transition-all duration-300 delay-100 bg-green-500 w-[83vw] h-[80vh] flex justify-center items-center absolute bottom-0 right-0rounded-t-3xl ' : 'rounded-t-3xl -translate-x-[0] transition-all duration-300 delay-100 bg-green-500 w-[83vw] h-[80vh] flex justify-center items-center absolute bottom-0 right-0'}></div>
+        <div className={!trans ? 'translate-x-[95rem] transition-all duration-300 delay-100 w-[83vw] h-[100vh] bg-white flex justify-center items-center absolute top-0 right-0 ' : '-translate-x-[0] transition-all duration-300 delay-100 bg-white w-[83vw] h-[100vh] flex justify-center items-center absolute top-0 right-0'}>
+        <div>
+            <input type="text" name="title" placeholder="Untiitle" value=""/>
+            <textarea row="5" name="description" placeholder="Description" value=""/>
+            <div>Date Created: </div>
+        </div>
+
+        </div>
         </section>
     )
 }

@@ -1,8 +1,8 @@
-function Important(){
+function Journal(){
     return(
         <section>Important</section>
     )
 
 }
 
-export default Important
+export default Journal

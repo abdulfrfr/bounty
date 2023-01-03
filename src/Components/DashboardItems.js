@@ -1,45 +1,47 @@
 
-import {BiTimeFive} from 'react-icons/bi'
-import {AiOutlineStar} from 'react-icons/ai'
-import {MdOutlineRestorePage, MdOutlineDrafts, MdLabelImportantOutline} from 'react-icons/md'
-import Saved from './Dashboard Pages/Saved'
-import Starred from './Dashboard Pages/Starred'
+import {GiBookshelf} from 'react-icons/gi'
+import {BsJournalCheck} from 'react-icons/bs'
+import {MdOutlineTask,MdOutlineArticle, MdOutlineDrafts,} from 'react-icons/md'
+import Todo from './Dashboard Pages/Todo'
+import BlogPost from './Dashboard Pages/BlogPost'
 import Drafts from './Dashboard Pages/Drafts'
-import Snoozed from './Dashboard Pages/Snoozed'
-import Important from './Dashboard Pages/Important'
+import ReadingList from './Dashboard Pages/ReadingList'
+import Journal from './Dashboard Pages/Journal'
 
 const items =[
     {
-        title: "Saved",
-        icon: MdOutlineRestorePage,
-        page: Saved,
+        title: "Task List",
+        icon: MdOutlineTask,
+        page: Todo,
      
 },
     {
-        title: "Starred",
-        icon: AiOutlineStar,
-        page: Starred,
+        title: "Quick Note",
+        icon: MdOutlineArticle,
+        page: BlogPost,
+     
+},
+    {
+        title: "Journal",
+        icon: BsJournalCheck,
+        page: Journal,
+ 
+},
+    {
+        title: "Reading List",
+        icon: GiBookshelf,
+        page: ReadingList,
      
 },
     {
         title: "Drafts",
         icon: MdOutlineDrafts,
         page: Drafts,
-     
-},
-    {
-        title: "Snoozed",
-        icon: BiTimeFive,
-        page: Snoozed,
-     
-},
-    {
-        title: "Important",
-        icon: MdLabelImportantOutline,
-        page: Important,
-     
+ 
 },
 
 ]
 
 export default items
+
+

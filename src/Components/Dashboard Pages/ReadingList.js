@@ -1,8 +1,8 @@
-function Snoozed(){
+function ReadingList(){
     return(
         <section>Snoozed</section>
     )
 
 }
 
-export default Snoozed
+export default ReadingList
