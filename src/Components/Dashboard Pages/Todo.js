@@ -36,8 +36,8 @@ function Todo(){
                 <div className='md:mt-4 mt-2 text-gray-700 flex justify-between items-center md:mr-20 border-b-2 border-b-gray-400 w-[83vw]'>
                     <div className='text-xl font-extrabold flex justify-start items-center px-4 md:py-2 py-1'><BsClipboardData className='mr-2'/>Board</div>       
                 </div>
-                <div className='md:overflow-hidden overflow-x-scroll overflow-y-scroll bg-white w-[83vw] p-2'>
-                    <div className=' flex justify-between items-start w-[300vw] h-[100vh] md:w-[75vw] p-4'>
+                <div className='md:overflow-hidden overflow-x-scroll overflow-auto bg-white w-[83vw] h-[100vh] px-2'>
+                    <div className='flex justify-between items-start w-[300vw] h-[600rem] md:w-[75vw] p-4'>
                         {
                             TodoItems.map((todo, index) => {
                                 return (
