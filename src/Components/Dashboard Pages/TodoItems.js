@@ -14,7 +14,8 @@ export const Todo = [
         addBtnStyle: 'cursor-pointer text-lg text-gray-500 ml-1',
         removeBtnStyle: 'cursor-pointer text-lg text-gray-500 ml-1',
         inputStyle: 'w-[65vw] p-1 rounded-xl outline-gray-700 border-2 border-gray-600',
-        inputDivStyle: 'flex justify-between items-center'
+        inputDivStyle: 'flex justify-between items-center',
+        inputs: []
     },
     {
         name: "Doing",
@@ -27,7 +28,8 @@ export const Todo = [
         addBtnStyle: 'cursor-pointer text-lg text-gray-500 ml-1',
         removeBtnStyle: 'cursor-pointer text-lg text-gray-500 ml-1',
         inputStyle: 'w-[65vw] p-1 rounded-xl outline-gray-700 border-2 border-gray-600',
-        inputDivStyle: 'flex justify-between items-center'
+        inputDivStyle: 'flex justify-between items-center',
+        inputs: []
     },
     {
         name: "Done",
@@ -40,7 +42,8 @@ export const Todo = [
         addBtnStyle: 'cursor-pointer text-lg text-gray-500 ml-1',
         removeBtnStyle: 'cursor-pointer text-lg text-gray-500 ml-1',
         inputStyle: 'w-[65vw] p-1 rounded-xl outline-gray-700 border-2 border-gray-600',
-        inputDivStyle: 'flex justify-between items-center'
+        inputDivStyle: 'flex justify-between items-center',
+        inputs: []
     },
     
 ]

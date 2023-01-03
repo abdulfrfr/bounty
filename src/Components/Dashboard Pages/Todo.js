@@ -7,11 +7,35 @@ import  TodoItems  from './TodoItems'
 function Todo(){
 
     const [show, setShow] = useState(false)
+    const [addInput, setAddInput] = useState("")
+
+    function getInput(event){
+        const value = event.target.value
+
+        setAddInput(value)
+    }
     function showInput(){
         setShow(true)
+        
     }
-    function getAddBtn(){
+    function getAddBtn(index, inputs){
+        if(addInput === ""){
+            setShow(false)
+            setAddInput("")
+
+        } else {
+            setShow(false)
+            inputs.push(addInput)
+            setAddInput("")
+        }
+
+    
+        
+    }
+
+    function getAddBtnMinus(){
         setShow(false)
+        
     }
     return(
         <section className='p-5'>
@@ -47,13 +71,20 @@ function Todo(){
                                         </div>
                                         <div onClick={showInput} className={show ? 'hidden' : `${todo.addDivStyle}`}><todo.addIcon className={todo.iconStyle}/> New</div>
                                         <div className= {show ? `${todo.inputDivStyle}` : 'hidden'}>
-                                            <input className={todo.inputStyle} type='text' name='add' placeholder=''/>
+                                            <input onChange={getInput} className={todo.inputStyle} type='text' name='add' placeholder='' value={addInput}/>
                                             <div className='flex justify-between items-center'>
-                                                <todo.addBtnIcon onClick={getAddBtn} className={todo.addBtnStyle}/>
-                                                <todo.removeBtnIcon onClick={getAddBtn} className={todo.removeBtnStyle}/>
+                                                <todo.addBtnIcon onClick={() => getAddBtn(index, todo.inputs)} className={todo.addBtnStyle}/>
+                                                <todo.removeBtnIcon onClick={getAddBtnMinus} className={todo.removeBtnStyle}/>
                                             </div>
                                             
                                         </div>
+                                        {
+                                            todo.inputs.map((input, index) => {
+                                                return(
+                                                    <div>{input}</div>
+                                                )
+                                            })
+                                        }
                                     </div>
                                 )
                             })
