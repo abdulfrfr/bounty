@@ -1,53 +1,46 @@
 import {useState} from 'react'
 import DashboardHead from './DashboardHead'
-import {AiOutlinePlus} from 'react-icons/ai'
-import {BsThreeDots, BsCheckLg, BsClipboardData, BsPlusLg} from 'react-icons/bs'
-import {FaTimes} from 'react-icons/fa'
+import {BsCheckLg, BsClipboardData} from 'react-icons/bs'
 import  TodoItems  from './TodoItems'
 function Todo(){
 
-    const [show, setShow] = useState(false)
     const [addInput, setAddInput] = useState("")
+    const [indx, setIndx] = useState(null)
 
-    function getInput(event){
+    function getInput(event){ 
         const value = event.target.value
-
-        setAddInput(value)
+        setAddInput(value)    
     }
-    function showInput(){
-        setShow(true)
-        
+    function showInput(index){
+            setIndx(index)    
     }
     function getAddBtn(index, inputs){
         if(addInput === ""){
-            setShow(false)
             setAddInput("")
+            setIndx(index)
 
         } else {
-            setShow(false)
             inputs.push(addInput)
             setAddInput("")
-        }
-
-    
-        
+            setIndx(null)
+        }   
     }
 
     function getAddBtnMinus(){
-        setShow(false)
-        
+        setIndx(null)    
     }
+
     return(
         <section className='p-5'>
-            <div className='text-gray-700 text-lg text-extrabold pb-3'><div>Task List</div></div>
+            <div className='box-border text-gray-700 text-lg text-extrabold pb-3'><div>Task List</div></div>
             <DashboardHead/>
 
             <div className='mt-5'>
-                <div className='w-[83vw]text-xl pl-3 pt-3 flex justify-between items-center'>
+                <div className='box-borderw-[83vw]text-xl pl-3 pt-3 flex justify-between items-center'>
                     
 
                     <div>
-                        <div className='flex justify-start items-center text-5xl mb-3'><BsCheckLg className='mr-4'/>Task</div>
+                        <div className='box-border flex justify-start items-center text-5xl mb-3'><BsCheckLg className='mr-4'/>Task</div>
                         <div className='md:text-[1rem] line-0 text-[0.7rem]'>
 
                             <div>Use this template to track your personal tasks.</div>
@@ -57,8 +50,8 @@ function Todo(){
                     </div>
                 </div>
                 
-                <div className='md:mt-4 mt-2 text-gray-700 flex justify-between items-center md:mr-20 border-b-2 border-b-gray-400 w-[83vw]'>
-                    <div className='text-xl font-extrabold flex justify-start items-center px-4 md:py-2 py-1'><BsClipboardData className='mr-2'/>Board</div>       
+                <div className='md:mt-4 mt-2 text-gray-700 flex justify-between items-center md:mr-20 border-b-2 border-b-gray-400 box-border w-[83vw]'>
+                    <div className='text-xl font-extrabold flex justify-start items-center px-4 md:py-2 py-1 box-border'><BsClipboardData className='mr-2'/>Board</div>       
                 </div>
                 <div className='md:overflow-hidden overflow-x-scroll overflow-auto bg-white w-[83vw] h-[100vh] px-2'>
                     <div className='flex justify-between items-start w-[300vw] h-[600rem] md:w-[75vw] p-4'>
@@ -69,8 +62,8 @@ function Todo(){
                                         <div className={todo.nameStyle}>
                                             <div className=''>{todo.name}</div>
                                         </div>
-                                        <div onClick={showInput} className={show ? 'hidden' : `${todo.addDivStyle}`}><todo.addIcon className={todo.iconStyle}/> New</div>
-                                        <div className= {show ? `${todo.inputDivStyle}` : 'hidden'}>
+                                        <div onClick={() => showInput(index)} className={index === indx ? 'hidden' : `${todo.addDivStyle}`}><todo.addIcon className={todo.iconStyle}/> New</div>
+                                        <div className= {index === indx ? `${todo.inputDivStyle}` : 'hidden'}>
                                             <input onChange={getInput} className={todo.inputStyle} type='text' name='add' placeholder='' value={addInput}/>
                                             <div className='flex justify-between items-center'>
                                                 <todo.addBtnIcon onClick={() => getAddBtn(index, todo.inputs)} className={todo.addBtnStyle}/>
@@ -81,7 +74,7 @@ function Todo(){
                                         {
                                             todo.inputs.map((input, index) => {
                                                 return(
-                                                    <div className='bg-gray-100 rounded-xl py-1 px-2'>{input}</div>
+                                                    <div className='break-all box-border'>{input}</div>
                                                 )
                                             })
                                         }
