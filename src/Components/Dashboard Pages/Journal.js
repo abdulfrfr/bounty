@@ -14,7 +14,7 @@ function Journal(){
                 <div className="text-sm flex items-center justify-between w-[55vw] sm:w-[30vw] md:w-[20vw] lg:w-[15vw]">
                     <div>Filter</div>
                     <div>Sort</div>
-                    <div><AiOutlineSearch/></div>
+                    <div className='text-lg'><AiOutlineSearch/></div>
                     <div>
                         <button className="bg-blue-600 py-1 px-2 rounded-md flex justify-center items-center"><div className='mr-1 text-white'>New</div> <BsChevronDown className='pl-1 border-l-[1px] border-black'/></button>
                     </div>
