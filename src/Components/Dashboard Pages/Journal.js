@@ -1,5 +1,5 @@
 import {AiOutlineSearch} from 'react-icons/ai'
-import {BsChevronDown} from 'react-icons/bs'
+import {FaChevronDown} from 'react-icons/fa'
 
 function Journal(){
     return(
@@ -16,7 +16,7 @@ function Journal(){
                     <div>Sort</div>
                     <div className='text-lg'><AiOutlineSearch/></div>
                     <div>
-                        <button className="bg-blue-600 py-1 px-2 rounded-md flex justify-center items-center"><div className='mr-1 text-white'>New</div> <BsChevronDown className='pl-1 border-l-[1px] border-black'/></button>
+                        <button className="bg-blue-600 py-1 px-2 rounded-md flex justify-center items-center text-white"><div className='mr-1 text-white'>New</div> <FaChevronDown className='pl-1 border-l-[1px] border-black'/></button>
                     </div>
                 </div>
             </div>
