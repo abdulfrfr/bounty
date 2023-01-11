@@ -1,7 +1,22 @@
+import { useReducer } from 'react'
 import {AiOutlineSearch} from 'react-icons/ai'
 import {FaChevronDown} from 'react-icons/fa'
+import { Journalitem } from './JournalItems'
+import ContentEditable from 'react-contenteditable'
+
+function reducer(){
+
+}
 
 function Journal(){
+    const [journal, dispatch] = useReducer(reducer, Journalitem)
+    const date = new Date()
+    const theDate = date.toLocaleDateString('en-us', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    })
+
     return(
         <section className="md:pt-28 sm:pt-16 pt-5 md:pl-28 sm:pl-10 pl-2 md:pr-10 md:pb-10 w-[83vw] box-border">
             <div className="">
@@ -20,6 +35,23 @@ function Journal(){
                     </div>
                 </div>
             </div>
+            <div className='px-10 py-5 box-border'>
+                {
+                    journal.map((journ, index) => {
+                        return(
+                            <div className='flex justify-between items-center py-1 px-2 rounded-lg hover:bg-gray-300 box-border'>
+                                <ContentEditable html={journ.title} className='outline-none'/>
+                                <div className='flex justify-start items-center'>
+                                    <div className='bg-purple-400 rounded-lg px-2'>{journ.tag}</div>
+                                    <div className='ml-2 text-gray-400'>{theDate}</div>
+                                </div>
+                                
+                            </div>
+                        )
+                    })
+                }
+            </div>
+
         </section>
     )
 
