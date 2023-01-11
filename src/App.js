@@ -14,6 +14,7 @@ function App() {
   const [Page, setPage] = useState(Navs.filter((nav, index) => index === 0 ))
   const [styl, setStyl] = useState(0)
   const [show, setShow] = useState(true)
+  const [showEdit, setShowEdit] = useState(false)
 
   return (
     <BrowserRouter>
@@ -23,7 +24,7 @@ function App() {
       <Route path="/about" element={<About/>}/>
       <Route path="/contact" element={<Contact/>}/>
       <Route path="/login" element={<Login show={show} setShow={setShow} styl={styl} setStyl={setStyl} navs={navbar} setNavs={setNavbar} Page={Page} setPage={setPage}/>}/>
-      <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route path="/dashboard" element={<Dashboard showEdit={showEdit} setShowEdit={setShowEdit}/>}/>
       <Route path="/signup" element={<Signup show={show} setShow={setShow} styl={styl} setStyl={setStyl} navs={navbar} setNavs={setNavbar} Page={Page} setPage={setPage}/>}/>
     </Routes> 
     </BrowserRouter>

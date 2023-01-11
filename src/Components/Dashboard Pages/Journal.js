@@ -1,6 +1,7 @@
-import { useReducer } from 'react'
+import { useReducer, useState } from 'react'
 import {AiOutlineSearch} from 'react-icons/ai'
 import {FaChevronDown} from 'react-icons/fa'
+import {CiEdit} from 'react-icons/ci'
 import { Journalitem } from './JournalItems'
 import ContentEditable from 'react-contenteditable'
 
@@ -8,8 +9,10 @@ function reducer(){
 
 }
 
-function Journal(){
+function Journal({showEdit, setShowEdit}){
     const [journal, dispatch] = useReducer(reducer, Journalitem)
+    const [isShow, setIsShow] = useState(false)
+    
     const date = new Date()
     const theDate = date.toLocaleDateString('en-us', {
         year: 'numeric',
@@ -18,7 +21,7 @@ function Journal(){
     })
 
     return(
-        <section className="md:pt-28 sm:pt-16 pt-5 md:pl-28 sm:pl-10 pl-2 md:pr-10 md:pb-10 w-[83vw] box-border">
+        <section className="relative md:pt-28 sm:pt-16 pt-5 md:pl-28 sm:pl-10 pl-2 md:pr-10 md:pb-10 w-[83vw] box-border">
             <div className="">
                 <div className='font-extrabold text-3xl mb-3'>JOURNAL</div>
                 <div className="lg:w-[40vw] md:w-[60vw] sm:w-[50vw] text-md">Document your life, goals and accomplishment
@@ -35,12 +38,16 @@ function Journal(){
                     </div>
                 </div>
             </div>
-            <div className='px-10 py-5 box-border'>
+            <div className='sm:px-10 sm:py-5 py-3 box-border sm:text-sm text-xs'>
                 {
                     journal.map((journ, index) => {
                         return(
-                            <div className='flex justify-between items-center py-1 px-2 rounded-lg hover:bg-gray-300 box-border'>
-                                <ContentEditable html={journ.title} className='outline-none'/>
+                            <div onMouseOver={() => setIsShow(true)} onMouseOut={() => setIsShow(false)} className='flex justify-between items-center py-1 px-2 rounded-md hover:bg-gray-300 box-border'>
+                                <div className='flex justify-start items-center'>
+                                    <ContentEditable html={journ.title} className='outline-none'/>
+                                    <CiEdit onClick={() => setShowEdit(true)} className={isShow ? 'block text-xl' : 'text-xl hidden'}/>
+                                </div>
+                                
                                 <div className='flex justify-start items-center'>
                                     <div className='bg-purple-400 rounded-lg px-2'>{journ.tag}</div>
                                     <div className='ml-2 text-gray-400'>{theDate}</div>

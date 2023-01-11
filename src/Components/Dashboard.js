@@ -3,7 +3,7 @@ import Logo from "./Logo"
 import {BsPlusLg} from 'react-icons/bs'
 import Items from './DashboardItems'
 
-function Dashboard(){
+function Dashboard({showEdit, setShowEdit}){
     const [trans, setTrans] = useState(false)
     const [id, setId] = useState(0)
     const [page, setPage] = useState(Items.filter((item, index) => index === 0))
@@ -15,6 +15,8 @@ function Dashboard(){
        setId(indx)
 
        setTrans(false)
+
+       setShowEdit(false)
     }
 
     function changeTrans(){
@@ -46,14 +48,14 @@ function Dashboard(){
                     {
                         page.map((pg, index) => {
                             return(
-                                <section><pg.page/></section>
+                                <section><pg.page showEdit={showEdit} setShowEdit={setShowEdit}/></section>
                             )
                         })
                     }
                 </div>
             </div> 
         </div>
-        <div className={!trans ? 'translate-x-[95rem] transition-all duration-300 delay-100 w-[83vw] h-[100vh] bg-white flex justify-center items-center absolute top-0 right-0 ' : '-translate-x-[0] transition-all duration-300 delay-100 bg-white w-[83vw] h-[100vh] flex justify-center items-center absolute top-0 right-0'}>
+        <div className={!trans ? 'translate-x-[95rem] transition-all duration-300 delay-100 w-[83vw] h-[100vh] bg-white flex justify-center items-center absolute top-0 right-0 ' : 'transition-all duration-300 delay-100 bg-white w-[83vw] h-[100vh] flex justify-center items-center absolute top-0 right-0'}>
         <div>
             <input type="text" name="title" placeholder="Untiitle" value=""/>
             <textarea row="5" name="description" placeholder="Description" value=""/>
@@ -61,6 +63,8 @@ function Dashboard(){
         </div>
 
         </div>
+        <div className={showEdit ? 'absolute bottom-0 right-0 bg-white h-[100vh] w-[83vw]  transition-all delay-100 duration-300' : 'absolute top-0 right-0 bg-white h-[100vh] w-[83vw] translate-x-[95rem] transition-all delay-100 duration-300'}> Editing... </div>
+
         </section>
     )
 }
