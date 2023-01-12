@@ -21,10 +21,10 @@ function Journal({showEdit, setShowEdit}){
     })
 
     return(
-        <section className="relative md:pt-28 sm:pt-16 pt-5 md:pl-28 sm:pl-10 pl-2 md:pr-10 md:pb-10 w-[83vw] box-border">
+        <section className={showEdit ? "relative md:pt-28 sm:pt-16 pt-5 md:pl-28 sm:pl-10 pl-2 md:pr-10 md:pb-10 w-[83vw] lg:w-[40vw] box-border" : "relative md:pt-28 sm:pt-16 pt-5 md:pl-28 sm:pl-10 pl-2 md:pr-10 md:pb-10 w-[83vw] box-border"}>
             <div className="">
                 <div className='font-extrabold text-3xl mb-3'>JOURNAL</div>
-                <div className="lg:w-[40vw] md:w-[60vw] sm:w-[50vw] text-md">Document your life, goals and accomplishment
+                <div className={showEdit ? "" : "lg:w-[40vw] md:w-[60vw] sm:w-[50vw] text-md"}>Document your life, goals and accomplishment
                 to always remind yourslef of all you have gone through
                 and how far you've come.</div>
             </div>

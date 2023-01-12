@@ -44,7 +44,7 @@ function Dashboard({showEdit, setShowEdit}){
                         }
                     </div>
                 </div>
-                <div className="w-[83vw] h-[100vh]">
+                <div className="w-[40vw] h-[100vh]">
                     {
                         page.map((pg, index) => {
                             return(
@@ -63,7 +63,7 @@ function Dashboard({showEdit, setShowEdit}){
         </div>
 
         </div>
-        <div className={showEdit ? 'absolute bottom-0 right-0 bg-white h-[100vh] w-[83vw]  transition-all delay-100 duration-300' : 'absolute top-0 right-0 bg-white h-[100vh] w-[83vw] translate-x-[95rem] transition-all delay-100 duration-300'}> Editing... </div>
+        <div className={showEdit ? 'absolute bottom-0 right-0 bg-white h-[100vh] w-[83vw] lg:w-[40vw] transition-all duration-300' : 'absolute top-0 right-0 bg-white h-[100vh] w-[83vw] translate-x-[95rem] transition-all duration-300'}> Editing... </div>
 
         </section>
     )
