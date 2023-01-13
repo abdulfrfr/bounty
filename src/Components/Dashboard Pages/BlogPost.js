@@ -8,7 +8,7 @@ function reducer(state, action){
         case "create_new_item":
             return [...state, action.item]
         default:
-            break;
+            console.log('working...')
     }
 }
 

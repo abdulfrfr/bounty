@@ -12,9 +12,11 @@ function Todo(){
         const value = event.target.value
         setAddInput(value)    
     }
+
     function showInput(index){
             setIndx(index)    
     }
+    
     function getAddBtn(index, inputs){
         if(addInput === ""){
             setAddInput("")
