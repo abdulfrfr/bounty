@@ -33,20 +33,20 @@ function Login({ navs, setNavs, Page, setPage, styl, setStyl, show, setShow }) {
     }));
   }
 
-  async function loginUser() {
-    console.log(login);
-    const res = await axios
-      .get(`http://localhost:5000/users/${login.email}/${login.password}`)
-      .catch((err) => {
-        console.log(err);
-      });
+  // async function loginUser() {
+  //   console.log(login);
+  //   const res = await axios
+  //     .get(`http://localhost:5000/users/${login.email}/${login.password}`)
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
 
-    console.log(res);
-    if (res.status === 200) {
-      userDetailDispatch({ type: "user_login", userData: data });
-      navigate("/dashboard");
-    }
-  }
+  //   console.log(res);
+  //   if (res.status === 200) {
+  //     userDetailDispatch({ type: "user_login", userData: data });
+  //     navigate("/dashboard");
+  //   }
+  // }
 
   return (
     <section className="bg-gray-200 h-[100vh] pt-20">
@@ -101,7 +101,7 @@ function Login({ navs, setNavs, Page, setPage, styl, setStyl, show, setShow }) {
             </div>
 
             <button
-              onClick={loginUser}
+              // onClick={loginUser}
               className="text-white text-lg bg-blue-500 md:w-[50vw] lg:w-[30vw] w-[90vw] rounded-xl mt-3 p-4"
             >
               Sign In
