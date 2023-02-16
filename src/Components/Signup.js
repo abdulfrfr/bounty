@@ -3,6 +3,7 @@ import NavSide from "./NavSide"
 import image from '../signup.jpg'
 import {Link} from 'react-router-dom'
 import {BsArrowRight} from 'react-icons/bs'
+import axios from 'axios'
 
 function Signup({navs, setNavs, Page, setPage, styl, setStyl, show, setShow}){
     const [signup, setSignup] = useState({
@@ -23,8 +24,15 @@ function Signup({navs, setNavs, Page, setPage, styl, setStyl, show, setShow}){
             }
         })
     }
+
+    function addUser() {
+        axios.post("http://localhost:5000/adduser",signup)
+        .then((res) => console.log(res.data))
+        .catch((err) => console.log(err))
+
+    }
     return(
-        <section className="bg-gray-200 h-[100vh] pt-20">
+        <section className="bg-gray-200 lg:h-[100vh] pt-20">
             <NavSide navs={navs} setNavs={setNavs} Page={Page} setPage={setPage} setStyl={setStyl} styl={styl} show={show} setShow={setShow}/>
             <div className="block md:flex md:justify-center md:items-start">
             <div className="object-contain hidden md:flex md:justify-center md:items-center w-[50vw] h-[80vh]">
@@ -60,7 +68,7 @@ function Signup({navs, setNavs, Page, setPage, styl, setStyl, show, setShow}){
                 </div>
                 <div>
                     <Link to="/login">
-                        <button className='text-white text-lg text-gray-700 bg-blue-500 md:w-[50vw] lg:w-[45vw] w-[90vw] rounded-xl mt-3 p-4'>Sign Up</button>
+                        <button onClick={addUser} className='text-white text-lg bg-blue-500 md:w-[50vw] lg:w-[45vw] w-[90vw] rounded-xl mt-3 p-4'>Sign Up</button>
                     </Link>
                 </div>
                 <div>
