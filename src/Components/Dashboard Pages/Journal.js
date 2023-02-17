@@ -7,7 +7,17 @@ import { BsChevronDown } from "react-icons/bs";
 import ContentEditable from "react-contenteditable";
 import { Journalitem } from "./JournalItems";
 
-function reducer(state, action) {}
+function reducer(state, action) {
+  switch (action.type) {
+    case "new_journ":
+      return [...state, action.val];
+    case "edit_journ":
+      state.splice(action.index, 1, action.inputs);
+      return [...state];
+    default:
+      return [...state];
+  }
+}
 
 function journReducer(state, action) {
   switch (action.type) {
@@ -15,7 +25,7 @@ function journReducer(state, action) {
       return {
         title: action.data.title,
         description: action.data.description,
-        context: action.data.description,
+        context: action.data.context,
       };
     case "get_inputs":
       return {
@@ -37,6 +47,7 @@ function journReducer(state, action) {
 }
 
 function Journal({ showEdit, setShowEdit, showTags, setShowTags }) {
+  const [journIndex, setJournIndex] = useState(null);
   const [journalItems, dispatch] = useReducer(reducer, Journalitem);
   const [journInput, journDispatch] = useReducer(journReducer, {
     title: "",
@@ -67,14 +78,28 @@ function Journal({ showEdit, setShowEdit, showTags, setShowTags }) {
     day: "numeric",
   });
 
-  function getShowEdit(journ) {
+  function getShowEdit(journ, index) {
     setShowEdit(true);
     whenJournIsClicked(journ);
+    setJournIndex(index);
   }
 
   function onClickNewButton() {
     setToEmpty();
     setShowEdit(true);
+    setJournIndex(null);
+  }
+
+  function addJournal() {
+    if (journIndex !== null) {
+      if (journInput.title !== "") {
+        dispatch({ type: "edit_journ", inputs: journInput, index: journIndex });
+      }
+    } else {
+      if (journInput.title !== "") {
+        dispatch({ type: "new_journ", val: journInput });
+      }
+    }
   }
 
   return (
@@ -89,7 +114,7 @@ function Journal({ showEdit, setShowEdit, showTags, setShowTags }) {
         <div className="font-extrabold text-3xl mb-3">JOURNAL</div>
         <div
           className={
-            showEdit ? "" : "lg:w-[40vw] md:w-[60vw] sm:w-[50vw] text-md"
+            showEdit ? "" : "lg:w-[40vw] md:w-[60vw] sm:w-[50vw] text-sm"
           }
         >
           Document your life, goals and accomplishment to always remind yourslef
@@ -125,7 +150,7 @@ function Journal({ showEdit, setShowEdit, showTags, setShowTags }) {
               <div className="flex justify-start items-center">
                 <ContentEditable html={journ.title} className="outline-none" />
                 <CiEdit
-                  onClick={() => getShowEdit(journ)}
+                  onClick={() => getShowEdit(journ, index)}
                   className={
                     isShow === index ? "block text-xl" : "text-xl hidden"
                   }
@@ -246,9 +271,15 @@ function Journal({ showEdit, setShowEdit, showTags, setShowTags }) {
             name="context"
             placeholder="write out your journal..."
             value={journInput.context}
-            className="w-[100%] bg-gray-100 resize-none rounded-md outline-none text-lg mt-5"
+            className="w-[100%] p-4 bg-gray-100 resize-none rounded-md outline-none text-lg mt-5"
           />
         </div>
+        <button
+          onClick={addJournal}
+          className="text-white bg-blue-500 py-3 px-5 rounded-xl"
+        >
+          ADD
+        </button>
       </div>
     </section>
   );
