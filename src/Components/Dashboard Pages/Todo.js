@@ -14,6 +14,7 @@ function Todo() {
 
   function showInput(index) {
     setIndx(index);
+    setAddInput("");
   }
 
   function getAddBtn(index, inputs) {

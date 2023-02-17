@@ -36,7 +36,7 @@ function BlogPost() {
         </div>
       </div>
 
-      <div className="bg-white mt-4 w-[83vw] h-[84vh] px-4 pt-4 overflow-y-scroll overflow-x-hidden lg:overflow-hidden">
+      <div className="bg-white mt-4 w-[83vw] h-[84vh] px-4 pt-4 pb-10 overflow-y-scroll overflow-x-hidden">
         <div>
           <label
             className="cursor-pointer flex justity-start items-center text-gray-400"
@@ -63,7 +63,7 @@ function BlogPost() {
           <div className="w-[60vw]">
             {alert.map((alt, index) => {
               return (
-                <div className="flex justify-center items-center">
+                <div className="flex justify-center items-center mb-3">
                   <div className="flex justify-start items-center">
                     <div
                       onClick={() => pushAlert(alt)}

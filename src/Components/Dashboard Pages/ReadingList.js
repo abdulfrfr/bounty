@@ -1,5 +1,5 @@
-import { AiOutlineDoubleRight } from "react-icons/ai";
-import { BsBookshelf, BsSearch } from "react-icons/bs";
+// import { AiOutlineDoubleRight } from "react-icons/ai";
+import { BsBookshelf, BsSearch, BsChevronDoubleDown } from "react-icons/bs";
 import { BiSortAlt2 } from "react-icons/bi";
 
 function ReadingList({ bookEdit, setBookEdit }) {
@@ -42,11 +42,21 @@ function ReadingList({ bookEdit, setBookEdit }) {
       <div
         className={
           bookEdit
-            ? " absolute w-[80vw] h-[100vh] top-0 right-0 bg-white translate-y-0 transition-all duration-300"
-            : "absolute w-[80vw] lg:w-[43vw] h-[100vh] top-0 right-0 bg-white lg:translate-y-0 translate-y-[100rem] transition-all duration-300"
+            ? "p-4 absolute w-[80vw] h-[100vh] top-0 right-0 bg-white translate-y-0 transition-all duration-300"
+            : "p-4 absolute w-[80vw] lg:w-[43vw] h-[100vh] top-0 right-0 bg-white lg:translate-y-0 translate-y-[100rem] transition-all duration-300"
         }
       >
-        <AiOutlineDoubleRight />
+        <BsChevronDoubleDown className="" />
+
+        <div>
+          <input
+            type="text"
+            name="booktitle"
+            placeholder="Untitled"
+            value={""}
+            className="w-full p-5 box-border text-4xl outline-none"
+          />
+        </div>
       </div>
     </section>
   );
