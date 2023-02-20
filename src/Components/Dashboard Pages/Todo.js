@@ -33,14 +33,14 @@ function Todo() {
   }
 
   return (
-    <section className="p-5">
+    <section className="p-5 w-[83vw]">
       <div className="box-border text-gray-700 text-lg text-extrabold pb-3">
         <div>Task List</div>
       </div>
       <DashboardHead className="w-[100vw]" />
 
       <div className="mt-5">
-        <div className="box-borderw-[83vw]text-xl pl-3 pt-3 flex justify-between items-center">
+        <div className="box-border w-[80vw] text-xl pl-3 pt-3 flex justify-between items-center">
           <div>
             <div className="box-border flex justify-start items-center text-5xl mb-3">
               <BsCheckLg className="mr-4" />

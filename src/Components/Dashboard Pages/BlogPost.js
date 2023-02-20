@@ -63,7 +63,7 @@ function BlogPost() {
             }
           />
         </div>
-        <div className="absolute">
+        <div className="absolute pb-20">
           <div>
             <label
               className="cursor-pointer flex justity-start items-center text-gray-400"
@@ -91,7 +91,7 @@ function BlogPost() {
             <div className="w-[60vw]">
               {alert.map((alt, index) => {
                 return (
-                  <div className="flex justify-center items-center mb-3">
+                  <div className="flex justify-center items-center mb-3 w-full">
                     <div className="flex justify-start items-center">
                       <div
                         onClick={() => pushAlert(alt)}
@@ -99,7 +99,7 @@ function BlogPost() {
                       >
                         +
                       </div>
-                      <div className="flex justify-start items-start text-gray-800 bg-gray-200 rounded-lg p-4 lg:w-[60vw] w-[80vw] box-border">
+                      <div className="flex justify-start items-start text-gray-800 bg-gray-200 rounded-lg p-4 lg:w-[60vw] w-full box-border">
                         <div>💡</div>
                         <ContentEditable
                           html={alt}
