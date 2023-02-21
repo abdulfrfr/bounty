@@ -36,7 +36,7 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
               className="flex  justify-center md:justify-between items-center md:w-[15vw] lg:w-[13vw] rounded-[50%] md:rounded-3xl border-2 border-gray-300 bg-gray-200 md:px-5 md:py-2 px-2 w-[3rem] h-[3rem] text-gray-700"
             >
               <div className="text-md lg:text-lg md:block hidden">Compose</div>
-              <BsPlusLg className="text-2xl font-bold" />
+              <BsPlusLg className="text-md font-bold" />
             </button>
             <div className="h-[40vh] flex flex-col justify-between items-center">
               {Items.map((item, index) => {
