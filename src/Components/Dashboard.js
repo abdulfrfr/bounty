@@ -28,29 +28,29 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
   return (
     <section className="bg-zinc-200 relative overflow-hidden">
       <div className="">
-        <div className="flex justtify-start items-start">
-          <div className="py-7 w-[17vw] h-[80vh] flex flex-col justify-between items-center">
+        <div className="flex justify-start items-start">
+          <div className="py-7 w-[20vw] flex flex-col justify-start items-center">
             <Logo />
             <button
               onClick={changeTrans}
-              className="flex  justify-center md:justify-between items-center md:w-[15vw] lg:w-[13vw] rounded-[50%] md:rounded-3xl border-2 border-gray-300 bg-gray-200 md:px-5 md:py-2 px-2 w-[3rem] h-[3rem] text-gray-700"
+              className="mb-10 flex justify-center lg:justify-between items-center lg:w-[13vw] rounded-[50%] md:rounded-3xl border-2 border-gray-300 bg-gray-200 md:px-5 md:py-2 px-2 w-[3rem] h-[3rem] text-gray-700"
             >
-              <div className="text-md lg:text-lg md:block hidden">Compose</div>
-              <BsPlusLg className="text-md font-bold" />
+              <div className="text-sm lg:text-lg md:block hidden">Compose</div>
+              <BsPlusLg className="text-sm font-bold" />
             </button>
-            <div className="h-[40vh] flex flex-col justify-between items-center">
+            <div className="flex flex-col justify-start items-center mt-5">
               {Items.map((item, index) => {
                 return (
                   <div
                     onClick={() => getPage(index)}
                     className={
                       index === id
-                        ? "cursor-pointer flex justify-center md:justify-start items-center w-[20vw] md:w-[17vw] md:px-10 px-2 py-2 bg-blue-300 md:rounded-r-3xl"
-                        : "cursor-pointer flex justify-center md:justify-start items-center w-[20vw] md:w-[17vw] md:px-10 px-2 py-2"
+                        ? "mb-3 box-border cursor-pointer flex justify-start  items-center w-full  md:px-10 px-2 py-2 bg-blue-300 md:rounded-r-3xl"
+                        : "mb-3 box-border cursor-pointer flex justify-start  items-center w-full  md:px-10 px-2 py-2"
                     }
                   >
-                    <item.icon className="md:text-md text-xl" />
-                    <div className="text-md ml-3 lg:block hidden">
+                    <item.icon className="sm:text-sm md:text-md" />
+                    <div className="sm:text-sm md:text-md ml-3 sm:block hidden">
                       {item.title}
                     </div>
                   </div>
@@ -80,7 +80,7 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
         className={
           !trans
             ? "translate-x-[95rem] transition-all duration-300 delay-100 w-[83vw] h-[100vh] bg-white flex justify-center items-center absolute top-0 right-0 "
-            : "transition-all duration-300 delay-100 bg-white w-[83vw] h-[100vh] flex justify-center items-center absolute top-0 right-0"
+            : "transition-all duration-300 delay-100 bg-white w-[80vw] h-[100vh] flex justify-center items-center absolute top-0 right-0"
         }
       >
         <div>

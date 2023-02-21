@@ -35,7 +35,7 @@ function BlogPost() {
   async function uploadCoverImage(event) {
     const imageFile = event.target.files[0];
 
-    const reader = await new FileReader();
+    const reader = new FileReader();
     reader.addEventListener("load", (e) => {
       setCoverImg(e.target.result);
     });

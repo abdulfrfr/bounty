@@ -121,19 +121,19 @@ function Journal({ showEdit, setShowEdit, showTags, setShowTags }) {
           of all you have gone through and how far you've come.
         </div>
       </div>
-      <div className="flex items-center justify-end md:items-end border-b-2 border-gray-700 pb-2 pt-8 pr-4">
-        <div className="text-sm flex items-center justify-between w-[55vw] sm:w-[30vw] md:w-[20vw] lg:w-[15vw]">
-          <div>Filter</div>
-          <div>Sort</div>
-          <div className="text-lg">
+      <div className="flex items-center justify-end border-b-2 border-gray-700 pb-2 pt-8 pr-10">
+        <div className="text-sm flex items-center justify-end w-[50vw] sm:w-[30vw] md:w-[20vw] lg:w-[15vw]">
+          <div className="mr-3">Filter</div>
+          <div className="mr-3">Sort</div>
+          <div className="text-lg mr-4">
             <AiOutlineSearch />
           </div>
-          <div>
+          <div className="pr-10">
             <button
               onClick={onClickNewButton}
               className="bg-blue-600 py-1 px-2 rounded-md flex justify-center items-center text-white"
             >
-              <div className="mr-1 text-white">New</div>
+              <div className="mr-5 text-white">New</div>
               <FaChevronDown className="pl-1 border-l-[1px] border-black" />
             </button>
           </div>
@@ -169,8 +169,8 @@ function Journal({ showEdit, setShowEdit, showTags, setShowTags }) {
       <div
         className={
           showEdit
-            ? "p-2 absolute top-0 right-0 bg-white h-[100vh] w-[83vw] lg:w-[40vw] transition-all duration-300 overflow-y-scroll overflow-x-hidden"
-            : "absolute top-0 right-0 bg-white h-[100vh] w-[83vw] translate-x-[95rem] transition-all duration-300"
+            ? "p-2 absolute top-0 right-0 bg-white h-[100vh] w-[80vw] lg:w-[40vw] transition-all duration-300 overflow-y-scroll overflow-x-hidden"
+            : "absolute top-0 right-0 bg-white h-[100vh] w-[80vw] translate-x-[95rem] transition-all duration-300"
         }
       >
         <div>
