@@ -33,10 +33,10 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
             <Logo />
             <button
               onClick={changeTrans}
-              className="mb-10 flex justify-center lg:justify-between items-center lg:w-[13vw] rounded-[50%] md:rounded-3xl border-2 border-gray-300 bg-gray-200 md:px-5 md:py-2 px-2 w-[3rem] h-[3rem] text-gray-700"
+              className="box-border mb-10 flex justify-center lg:justify-between items-center lg:w-[13vw] rounded-[50%] lg:rounded-3xl border-2 border-gray-300 bg-gray-200 md:px-5 w-[4rem] h-[4rem] text-gray-700"
             >
-              <div className="text-sm lg:text-lg md:block hidden">Compose</div>
-              <BsPlusLg className="text-sm font-bold" />
+              <div className="text-sm lg:text-lg lg:block hidden">Compose</div>
+              <BsPlusLg className="text-2xl lg:text-lg font-bold" />
             </button>
             <div className="flex flex-col justify-start items-center mt-5">
               {Items.map((item, index) => {
@@ -49,8 +49,8 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
                         : "mb-3 box-border cursor-pointer flex justify-start  items-center w-full  md:px-10 px-2 py-2"
                     }
                   >
-                    <item.icon className="sm:text-sm md:text-md" />
-                    <div className="sm:text-sm md:text-md ml-3 sm:block hidden">
+                    <item.icon className="text-lg lg:text-md" />
+                    <div className="text-sm lg:text-md ml-2 sm:block hidden">
                       {item.title}
                     </div>
                   </div>

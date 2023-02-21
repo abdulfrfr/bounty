@@ -68,7 +68,7 @@ function Todo() {
             Board
           </div>
         </div>
-        <div className="md:overflow-hidden overflow-x-scroll overflow-auto bg-white w-[83vw] h-[100vh] px-2">
+        <div className="md:overflow-x-hidden overflow-x-scroll overflow-auto bg-white w-[83vw] h-[100vh] px-2">
           <div className="flex justify-between items-start w-[300vw] h-[600rem] md:w-[75vw] p-4">
             {TodoItems.map((todo, index) => {
               return (
