@@ -33,7 +33,7 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
             <Logo />
             <button
               onClick={changeTrans}
-              className="box-border mb-10 flex justify-center lg:justify-between items-center lg:w-[13vw] rounded-[50%] lg:rounded-3xl border-2 border-gray-300 bg-gray-200 md:px-5 w-[4rem] h-[4rem] text-gray-700"
+              className="box-border mb-10 flex justify-center lg:justify-between items-center lg:w-[13vw] lg:h-[8vh] rounded-[50%] lg:rounded-3xl border-2 border-gray-300 bg-gray-200 lg:px-5 w-[4rem] h-[4rem] text-gray-700"
             >
               <div className="text-sm lg:text-lg lg:block hidden">Compose</div>
               <BsPlusLg className="text-2xl lg:text-lg font-bold" />
@@ -45,12 +45,12 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
                     onClick={() => getPage(index)}
                     className={
                       index === id
-                        ? "mb-3 box-border cursor-pointer flex justify-start  items-center w-full  md:px-10 px-2 py-2 bg-blue-300 md:rounded-r-3xl"
-                        : "mb-3 box-border cursor-pointer flex justify-start  items-center w-full  md:px-10 px-2 py-2"
+                        ? "mb-3 box-border cursor-pointer flex justify-start  items-center w-full  lg:px-10 px-2 py-2 bg-blue-300 rounded-r-3xl"
+                        : "mb-3 box-border cursor-pointer flex justify-start  items-center w-full  lg:px-10 px-2 py-2"
                     }
                   >
                     <item.icon className="text-lg lg:text-md" />
-                    <div className="text-sm lg:text-md ml-2 sm:block hidden">
+                    <div className="text-sm lg:text-md lg:ml-2 sm:block hidden">
                       {item.title}
                     </div>
                   </div>
