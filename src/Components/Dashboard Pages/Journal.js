@@ -106,29 +106,25 @@ function Journal({ showEdit, setShowEdit, showTags, setShowTags }) {
     <section
       className={
         showEdit
-          ? " md:pt-28 sm:pt-16 pt-5 md:pl-28 sm:pl-10 pl-2 md:pr-10 md:pb-10 w-[83vw] lg:w-[40vw] box-border transition-all duration-300"
-          : " md:pt-28 sm:pt-16 pt-5 md:pl-28 sm:pl-10 pl-2 md:pr-10 md:pb-10 w-[83vw] box-border"
+          ? " md:pt-28 sm:pt-16 pt-5 md:pl-28 sm:pl-10 pl-2 md:pr-10 md:pb-10 w-[80vw] lg:w-[40vw] box-border transition-all duration-300"
+          : " md:pt-28 sm:pt-16 pt-5 md:pl-28 sm:pl-10 pl-2 md:pr-10 md:pb-10 w-[80vw] box-border"
       }
     >
       <div className="">
         <div className="font-extrabold text-3xl mb-3">JOURNAL</div>
-        <div
-          className={
-            showEdit ? "" : "lg:w-[40vw] md:w-[60vw] sm:w-[50vw] text-sm"
-          }
-        >
+        <div className={"lg:w-[40vw] md:w-[60vw] sm:w-[50vw] text-sm"}>
           Document your life, goals and accomplishment to always remind yourslef
           of all you have gone through and how far you've come.
         </div>
       </div>
       <div className="flex items-center justify-end border-b-2 border-gray-700 pb-2 pt-8 pr-10">
-        <div className="text-sm flex items-center justify-end w-[50vw] sm:w-[30vw] md:w-[20vw] lg:w-[15vw]">
+        <div className="text-sm flex items-center justify-end w-full sm:w-[30vw] md:w-[20vw] lg:w-[15vw]">
           <div className="mr-3">Filter</div>
           <div className="mr-3">Sort</div>
           <div className="text-lg mr-4">
             <AiOutlineSearch />
           </div>
-          <div className="pr-10">
+          <div className="lg:pr-10">
             <button
               onClick={onClickNewButton}
               className="bg-blue-600 py-1 px-2 rounded-md flex justify-center items-center text-white"

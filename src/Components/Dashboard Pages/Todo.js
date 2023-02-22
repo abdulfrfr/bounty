@@ -40,24 +40,19 @@ function Todo() {
       <DashboardHead className="w-[100vw]" />
 
       <div className="mt-5">
-        <div className="box-border w-[80vw] text-xl pl-3 pt-3 flex justify-between items-center">
+        <div className="box-border w-[80vw] text-xl lg:pl-3 pt-3 flex justify-between items-center">
           <div>
             <div className="box-border flex justify-start items-center text-5xl mb-3">
               <BsCheckLg className="mr-4" />
               Task
             </div>
-            <div className="md:text-[1rem] line-0 text-[0.7rem]">
-              <div>Use this template to track your personal tasks.</div>
-              <div>
-                Click{" "}
-                <span className="text-red-700 bg-red-200 p-1 rounded-lg">
-                  + New
-                </span>{" "}
-                to create a new task directly on this board.
-              </div>
-              <div>
-                Click an existing task to add additional context or subtasks.
-              </div>
+            <div className="md:text-[1rem] text-[0.7rem] box-border w-full">
+              Use this template to track your personal tasks. <br /> Click
+              <span className="text-red-700 bg-red-200 p-1 rounded-lg">
+                + New
+              </span>
+              to create a new task directly on this board. <br /> Click an
+              existing task to add additional context or subtasks.
             </div>
           </div>
         </div>

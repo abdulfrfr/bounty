@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Logo from "./Logo";
 import { BsPlusLg } from "react-icons/bs";
+import { AiOutlineDoubleRight, AiOutlineDoubleLeft } from "react-icons/ai";
 import Items from "./DashboardItems";
 
 function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
   const [showTags, setShowTags] = useState(false);
+  const [expand, setExpand] = useState(false);
   const [trans, setTrans] = useState(false);
   const [id, setId] = useState(0);
   const [page, setPage] = useState(Items.filter((item, index) => index === 0));
@@ -18,6 +20,7 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
     setTrans(false);
 
     setShowEdit(false);
+    setExpand(false);
   }
 
   function changeTrans() {
@@ -26,10 +29,16 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
   }
 
   return (
-    <section className="bg-zinc-200 relative overflow-hidden">
+    <section className="bg-zinc-200 relative overflow-hidden transition-all duration-300">
       <div className="">
         <div className="flex justify-start items-start">
-          <div className="py-7 w-[20vw] flex flex-col justify-start items-center">
+          <div
+            className={
+              expand
+                ? "py-7 w-[60vw] flex flex-col justify-start items-center"
+                : "py-7 w-[20vw] flex flex-col justify-start items-center"
+            }
+          >
             <Logo />
             <button
               onClick={changeTrans}
@@ -38,6 +47,19 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
               <div className="text-sm lg:text-lg lg:block hidden">Compose</div>
               <BsPlusLg className="text-2xl lg:text-lg font-bold" />
             </button>
+
+            {!expand ? (
+              <AiOutlineDoubleRight
+                className="block sm:hidden"
+                onClick={() => setExpand(true)}
+              />
+            ) : (
+              <AiOutlineDoubleLeft
+                className="block sm:hidden"
+                onClick={() => setExpand(false)}
+              />
+            )}
+
             <div className="flex flex-col justify-start items-center mt-5">
               {Items.map((item, index) => {
                 return (
@@ -50,7 +72,13 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
                     }
                   >
                     <item.icon className="text-lg lg:text-md" />
-                    <div className="text-sm lg:text-md lg:ml-2 sm:block hidden">
+                    <div
+                      className={
+                        expand
+                          ? "text-sm lg:text-md lg:ml-2 block transition-all duration-300"
+                          : "text-sm lg:text-md lg:ml-2 sm:block hidden transition-all duration-300"
+                      }
+                    >
                       {item.title}
                     </div>
                   </div>
@@ -58,7 +86,13 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
               })}
             </div>
           </div>
-          <div className="w-[40vw] h-[100vh]">
+          <div
+            className={
+              expand
+                ? "translate-x-1 w-[60vw] h-[100vh] transition-all duration-300"
+                : "w-[80vw] h-[100vh] translate-x-0 transition-all duration-300"
+            }
+          >
             {page.map((pg, index) => {
               return (
                 <section>
