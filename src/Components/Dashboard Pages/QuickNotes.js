@@ -12,7 +12,7 @@ function reducer(state, action) {
   }
 }
 
-function BlogPost() {
+function QuickNotes() {
   const [alert, dispatch] = useReducer(reducer, alertItems);
   const [checkValue, setCheckValue] = useState({
     launch: "Launch",
@@ -44,14 +44,14 @@ function BlogPost() {
   }
 
   return (
-    <section>
-      <div className="flex justify-center items-center w-[83vw] h-[16vh]">
-        <div className="p-4 flex justify-start items-center w-[80vw] text-gray-700">
+    <section className="w-full">
+      <div className="flex justify-center items-center w-full h-[16vh] pt-20">
+        <div className="p-4 flex justify-start items-center w-full text-gray-700">
           <div className="text-2xl font-bold">Quick Note</div>
         </div>
       </div>
 
-      <div className="relative bg-white mt-4 w-[83vw] h-[84vh] px-4 pt-5 pb-20 overflow-y-scroll overflow-x-hidden">
+      <div className="relative bg-white mt-4 w-screen h-[100vh] px-4 pt-5 pb-20 overflow-y-scroll overflow-x-hidden">
         <div
           className={coverImg === "" ? "hidden" : "relative w-full h-[40vh]"}
         >
@@ -91,7 +91,10 @@ function BlogPost() {
             <div className="w-[60vw]">
               {alert.map((alt, index) => {
                 return (
-                  <div className="flex justify-center items-center mb-3 w-full">
+                  <div
+                    key={index}
+                    className="flex justify-center items-center mb-3 w-full"
+                  >
                     <div className="flex justify-start items-center">
                       <div
                         onClick={() => pushAlert(alt)}
@@ -169,4 +172,4 @@ function BlogPost() {
   );
 }
 
-export default BlogPost;
+export default QuickNotes;

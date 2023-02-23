@@ -106,13 +106,13 @@ function Journal({ showEdit, setShowEdit, showTags, setShowTags }) {
     <section
       className={
         showEdit
-          ? " md:pt-28 sm:pt-16 pt-5 md:pl-28 sm:pl-10 pl-2 md:pr-10 md:pb-10 w-[80vw] lg:w-[40vw] box-border transition-all duration-300"
-          : " md:pt-28 sm:pt-16 pt-5 md:pl-28 sm:pl-10 pl-2 md:pr-10 md:pb-10 w-[80vw] box-border"
+          ? " md:pt-28 sm:pt-16 pt-20 md:pl-2 sm:pl-2 pl-2 md:pr-10 md:pb-10 w-[80vw] lg:w-[40vw] box-border transition-all duration-300"
+          : " md:pt-28 sm:pt-16 md:pl-2 sm:pl-2 pl-2 md:pr-32 md:pb-10 w-full pt-20 box-border"
       }
     >
       <div className="">
         <div className="font-extrabold text-3xl mb-3">JOURNAL</div>
-        <div className={"lg:w-[40vw] md:w-[60vw] sm:w-[50vw] text-sm"}>
+        <div className=" md:w-[30vw] sm:w-[50vw] text-sm">
           Document your life, goals and accomplishment to always remind yourslef
           of all you have gone through and how far you've come.
         </div>
@@ -139,6 +139,7 @@ function Journal({ showEdit, setShowEdit, showTags, setShowTags }) {
         {journalItems.map((journ, index) => {
           return (
             <div
+              key={index}
               onMouseOver={() => setIsShow(index)}
               onMouseOut={() => setIsShow(null)}
               className="cursor-pointer flex justify-between items-center py-1 px-2 rounded-md hover:bg-gray-300 box-border"
@@ -165,8 +166,8 @@ function Journal({ showEdit, setShowEdit, showTags, setShowTags }) {
       <div
         className={
           showEdit
-            ? "p-2 absolute top-0 right-0 bg-white h-[100vh] w-[80vw] lg:w-[40vw] transition-all duration-300 overflow-y-scroll overflow-x-hidden"
-            : "absolute top-0 right-0 bg-white h-[100vh] w-[80vw] translate-x-[95rem] transition-all duration-300"
+            ? "p-2 absolute top-0 -right-[3.4rem] lg:left-[31rem] md:right-0 xl:left-[37.5rem]  bg-white h-[100vh] w-screen lg:w-[40vw] transition-all duration-300 overflow-y-scroll overflow-x-hidden"
+            : "absolute top-0 right-0 bg-white h-[100vh] w-screen translate-x-[95rem] transition-all duration-300"
         }
       >
         <div>

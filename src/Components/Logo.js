@@ -7,7 +7,7 @@ function Logo({ navs, setPage, setStyl }) {
   }
   return (
     <section className="mb-12 box-border">
-      <Link to="/">
+      <Link to="">
         <div
           onClick={getHome}
           className="outline-blue-500 px-5 hidden sm:flex md:justify-center md:items-center text-2xl md:text-3xl text-blue-500 font-extrabold"

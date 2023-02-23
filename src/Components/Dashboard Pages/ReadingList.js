@@ -42,11 +42,14 @@ function ReadingList({ bookEdit, setBookEdit }) {
       <div
         className={
           bookEdit
-            ? "p-4 absolute w-[80vw] h-[100vh] top-0 right-0 bg-white translate-y-0 transition-all duration-300"
+            ? "p-4 absolute w-screen h-[100vh] top-0 -right-[3.4rem] bg-white translate-y-0 transition-all duration-300"
             : "p-4 absolute w-[80vw] lg:w-[43vw] h-[100vh] top-0 right-0 bg-white lg:translate-y-0 translate-y-[100rem] transition-all duration-300"
         }
       >
-        <BsChevronDoubleDown className="" />
+        <BsChevronDoubleDown
+          onClick={() => setBookEdit(false)}
+          className={""}
+        />
 
         <div>
           <input

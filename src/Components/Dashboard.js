@@ -24,8 +24,9 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
   }
 
   function changeTrans() {
-    setTrans(!trans);
-    setBookEdit(false);
+    // setTrans(!trans);
+    // setBookEdit(false);
+    console.log("ok");
   }
 
   return (
@@ -36,7 +37,7 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
             className={
               expand
                 ? "py-7 w-[60vw] flex flex-col justify-start items-center"
-                : "py-7 w-[20vw] flex flex-col justify-start items-center"
+                : "py-7 w-[20vw] flex flex-col justify-start items-center sm:-translate-x-0 -translate-x-16"
             }
           >
             <Logo />
@@ -48,22 +49,11 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
               <BsPlusLg className="text-2xl lg:text-lg font-bold" />
             </button>
 
-            {!expand ? (
-              <AiOutlineDoubleRight
-                className="block sm:hidden"
-                onClick={() => setExpand(true)}
-              />
-            ) : (
-              <AiOutlineDoubleLeft
-                className="block sm:hidden"
-                onClick={() => setExpand(false)}
-              />
-            )}
-
             <div className="flex flex-col justify-start items-center mt-5">
               {Items.map((item, index) => {
                 return (
                   <div
+                    key={index}
                     onClick={() => getPage(index)}
                     className={
                       index === id
@@ -89,22 +79,21 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
           <div
             className={
               expand
-                ? "translate-x-1 w-[60vw] h-[100vh] transition-all duration-300"
-                : "w-[80vw] h-[100vh] translate-x-0 transition-all duration-300"
+                ? "translate-x-0 w-[60vw] h-[100vh] transition-all duration-300"
+                : "w-screen sm:w-[80vw] h-[100vh] transition-all duration-300 sm:-translate-x-0 -translate-x-14"
             }
           >
             {page.map((pg, index) => {
               return (
-                <section>
-                  <pg.page
-                    showEdit={showEdit}
-                    setShowEdit={setShowEdit}
-                    bookEdit={bookEdit}
-                    setBookEdit={setBookEdit}
-                    showTags={showTags}
-                    setShowTags={setShowTags}
-                  />
-                </section>
+                <pg.page
+                  key={index}
+                  showEdit={showEdit}
+                  setShowEdit={setShowEdit}
+                  bookEdit={bookEdit}
+                  setBookEdit={setBookEdit}
+                  showTags={showTags}
+                  setShowTags={setShowTags}
+                />
               );
             })}
           </div>
@@ -127,6 +116,21 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
           />
           <div>Date Created: </div>
         </div>
+      </div>
+      <div
+        className={
+          showEdit
+            ? "hidden"
+            : bookEdit
+            ? "hidden"
+            : "block sm:hidden absolute top-2 left-2 rounded-[50%] bg-white p-4 text-lg"
+        }
+      >
+        {!expand ? (
+          <AiOutlineDoubleRight className="" onClick={() => setExpand(true)} />
+        ) : (
+          <AiOutlineDoubleLeft className="" onClick={() => setExpand(false)} />
+        )}
       </div>
     </section>
   );

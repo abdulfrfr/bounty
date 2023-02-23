@@ -14,7 +14,7 @@ function DashboardHead() {
   return (
     <section className=" w-[75vw] flex justify-between items-center">
       <input
-        onChanng={(e) => setSearch(e.target.value)}
+        onChange={(e) => setSearch(e.target.value)}
         className="w-[80%] p-2 rounded-xl outline-blue-500"
         type="text"
         name="search"
