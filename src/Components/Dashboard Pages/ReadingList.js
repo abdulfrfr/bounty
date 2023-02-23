@@ -15,14 +15,14 @@ function ReadingList({ bookEdit, setBookEdit }) {
           </div>
 
           <div className="mt-5">
-            <div className="w-[68vw] lg:w-[35vw] text-sm">
+            <div className="w-[68vw] md:w-[30vw] text-sm">
               Document the Books you have read and the Books you would love to
               read in the nearest future...
             </div>
           </div>
         </div>
 
-        <div className="lg:w-[35vw] w-[70vw]">
+        <div className="md:w-[30vw] w-[70vw]">
           <div className=" border-b-[1px] border-b-black flex justify-end items-center px-3 pt-5 pb-2">
             <div className="mr-3 text-lg font-extrabold">
               <BsSearch />
