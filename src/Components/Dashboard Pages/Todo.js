@@ -161,9 +161,9 @@ function Todo() {
                           onMouseOut={() => setAfterShow("")}
                           className={
                             inputName === input
-                              ? "absolute left-10 top-5 box-border bg-gray-200 rounded-md p-3"
+                              ? "absolute left-8 top-5 box-border bg-gray-200 rounded-md p-3"
                               : afterShow === input
-                              ? "absolute left-10 top-5 box-border bg-gray-200 rounded-md p-3"
+                              ? "absolute left-8 top-5 box-border bg-gray-200 rounded-md p-3"
                               : "hidden"
                           }
                         >
