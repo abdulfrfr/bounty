@@ -6,7 +6,6 @@ import TodoItems from "./TodoItems";
 function Todo() {
   const [addInput, setAddInput] = useState("");
   const [indx, setIndx] = useState(null);
-  const [showOpt, setShowOpt] = useState(null);
   const [afterShow, setAfterShow] = useState("");
   const [inputName, setInputName] = useState("");
 
@@ -36,20 +35,34 @@ function Todo() {
   }
 
   function showOptFunc(index, inputname) {
-    setShowOpt(index);
     setInputName(inputname);
   }
   function hideOptFunc(index) {
-    setShowOpt(null);
     setInputName("");
   }
 
-  function moveItem(item, inputs, inputItem) {
-    const newItems = inputs.filter((input) => {
-      return input !== inputItem;
-    });
+  async function moveItem(
+    item,
+    todo,
+    inputItem,
+    inputIndex,
+    mainArr,
+    itemClicked
+  ) {
+    if (todo.name === item) {
+      await todo.inputs.splice(inputIndex, 1);
+    }
 
-    console.log(newItems);
+    if (itemClicked === "ToDo") {
+      mainArr[0].inputs.push(inputItem);
+    } else if (itemClicked === "Doing") {
+      mainArr[1].inputs.push(inputItem);
+    } else if (itemClicked === "Done") {
+      mainArr[2].inputs.push(inputItem);
+    }
+
+    console.log(inputItem);
+    setAfterShow("");
   }
 
   return (
@@ -156,19 +169,46 @@ function Todo() {
                         >
                           <div className={""}>
                             <div
-                              onClick={moveItem(todo.name, todo.inputs, input)}
+                              onClick={() =>
+                                moveItem(
+                                  todo.name,
+                                  todo,
+                                  input,
+                                  InputIndex,
+                                  TodoItems,
+                                  "ToDo"
+                                )
+                              }
                               className="hover:bg-gray-500 hover:text-white hover:rounded-md hover: p-2"
                             >
                               ToDo
                             </div>
                             <div
-                              onClick={moveItem(todo.name, todo.inputs, input)}
+                              onClick={() =>
+                                moveItem(
+                                  todo.name,
+                                  todo,
+                                  input,
+                                  InputIndex,
+                                  TodoItems,
+                                  "Doing"
+                                )
+                              }
                               className="hover:bg-gray-500 hover:text-white hover:rounded-md hover: p-2"
                             >
                               Doing
                             </div>
                             <div
-                              onClick={moveItem(todo.name, todo.inputs, input)}
+                              onClick={() =>
+                                moveItem(
+                                  todo.name,
+                                  todo,
+                                  input,
+                                  InputIndex,
+                                  TodoItems,
+                                  "Done"
+                                )
+                              }
                               className="hover:bg-gray-500 hover:text-white hover:rounded-md hover: p-2"
                             >
                               Done
