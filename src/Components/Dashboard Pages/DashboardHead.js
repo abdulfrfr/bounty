@@ -12,10 +12,10 @@ function DashboardHead() {
   const [search, setSearch] = useState("");
 
   return (
-    <section className=" w-[75vw] flex justify-between items-center">
+    <section className=" w-full flex justify-between items-center">
       <input
         onChange={(e) => setSearch(e.target.value)}
-        className="w-[80%] p-2 rounded-xl outline-blue-500"
+        className="w-full p-2 rounded-xl outline-blue-500"
         type="text"
         name="search"
         placeholder="Search"

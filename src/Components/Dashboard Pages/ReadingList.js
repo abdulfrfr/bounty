@@ -53,6 +53,7 @@ function ReadingList({ bookEdit, setBookEdit }) {
 
         <div>
           <input
+            onChange={() => console.log("ok")}
             type="text"
             name="booktitle"
             placeholder="Untitled"

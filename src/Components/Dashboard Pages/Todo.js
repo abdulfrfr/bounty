@@ -7,7 +7,8 @@ function Todo() {
   const [addInput, setAddInput] = useState("");
   const [indx, setIndx] = useState(null);
   const [showOpt, setShowOpt] = useState(null);
-  const [afterShow, setAfterShow] = useState(false);
+  const [afterShow, setAfterShow] = useState("");
+  const [inputName, setInputName] = useState("");
 
   function getInput(event) {
     const value = event.target.value;
@@ -34,11 +35,21 @@ function Todo() {
     setIndx(null);
   }
 
-  function showOptFunc(index) {
+  function showOptFunc(index, inputname) {
     setShowOpt(index);
+    setInputName(inputname);
   }
   function hideOptFunc(index) {
     setShowOpt(null);
+    setInputName("");
+  }
+
+  function moveItem(item, inputs, inputItem) {
+    const newItems = inputs.filter((input) => {
+      return input !== inputItem;
+    });
+
+    console.log(newItems);
   }
 
   return (
@@ -109,11 +120,11 @@ function Todo() {
                       />
                     </div>
                   </div>
-                  {todo.inputs.map((input, index) => {
+                  {todo.inputs.map((input, InputIndex) => {
                     return (
                       <div
-                        key={index}
-                        className="break-all box-border flex justify-start items-center relative"
+                        key={InputIndex}
+                        className="mt-5 cursor-pointer hover:bg-blue-500 break-all box-border flex justify-start items-center relative"
                       >
                         <div
                           className={
@@ -127,30 +138,39 @@ function Todo() {
                           }
                         ></div>
                         <div
-                          onMouseOver={() => showOptFunc(index)}
+                          onMouseOver={() => showOptFunc(InputIndex, input)}
                           onMouseOut={hideOptFunc}
                         >
                           {input}
                         </div>
                         <div
-                          onMouseOver={() => setAfterShow(true)}
-                          onMouseOut={() => setAfterShow(false)}
+                          onMouseOver={() => setAfterShow(input)}
+                          onMouseOut={() => setAfterShow("")}
                           className={
-                            showOpt === index
+                            inputName === input
                               ? "absolute left-10 top-5 box-border bg-gray-200 rounded-md p-3"
-                              : afterShow
+                              : afterShow === input
                               ? "absolute left-10 top-5 box-border bg-gray-200 rounded-md p-3"
                               : "hidden"
                           }
                         >
                           <div className={""}>
-                            <div className="hover:bg-gray-500 hover:text-white hover:rounded-md hover: p-2">
+                            <div
+                              onClick={moveItem(todo.name, todo.inputs, input)}
+                              className="hover:bg-gray-500 hover:text-white hover:rounded-md hover: p-2"
+                            >
                               ToDo
                             </div>
-                            <div className="hover:bg-gray-500 hover:text-white hover:rounded-md hover: p-2">
+                            <div
+                              onClick={moveItem(todo.name, todo.inputs, input)}
+                              className="hover:bg-gray-500 hover:text-white hover:rounded-md hover: p-2"
+                            >
                               Doing
                             </div>
-                            <div className="hover:bg-gray-500 hover:text-white hover:rounded-md hover: p-2">
+                            <div
+                              onClick={moveItem(todo.name, todo.inputs, input)}
+                              className="hover:bg-gray-500 hover:text-white hover:rounded-md hover: p-2"
+                            >
                               Done
                             </div>
                           </div>

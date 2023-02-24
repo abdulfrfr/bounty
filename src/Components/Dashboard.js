@@ -65,8 +65,8 @@ function Dashboard({ showEdit, setShowEdit, bookEdit, setBookEdit }) {
                     <div
                       className={
                         expand
-                          ? "text-sm lg:text-md lg:ml-2 block transition-all duration-300"
-                          : "text-sm lg:text-md lg:ml-2 sm:block hidden transition-all duration-300"
+                          ? "text-sm lg:text-md ml-2 block transition-all duration-300"
+                          : "text-sm lg:text-md ml-2 sm:block hidden transition-all duration-300"
                       }
                     >
                       {item.title}
