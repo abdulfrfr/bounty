@@ -6,6 +6,8 @@ import TodoItems from "./TodoItems";
 function Todo() {
   const [addInput, setAddInput] = useState("");
   const [indx, setIndx] = useState(null);
+  const [showOpt, setShowOpt] = useState(null);
+  const [afterShow, setAfterShow] = useState(false);
 
   function getInput(event) {
     const value = event.target.value;
@@ -30,6 +32,13 @@ function Todo() {
 
   function getAddBtnMinus() {
     setIndx(null);
+  }
+
+  function showOptFunc(index) {
+    setShowOpt(index);
+  }
+  function hideOptFunc(index) {
+    setShowOpt(null);
   }
 
   return (
@@ -60,7 +69,7 @@ function Todo() {
             Board
           </div>
         </div>
-        <div className="md:overflow-x-hidden overflow-x-scroll overflow-auto bg-white w-full h-[100vh] px-2">
+        <div className="relative md:overflow-x-hidden overflow-x-scroll overflow-auto bg-white w-full h-[100vh] px-2">
           <div className="flex justify-between items-start w-[300vw] h-[600rem] md:w-[75vw] p-4">
             {TodoItems.map((todo, index) => {
               return (
@@ -102,8 +111,50 @@ function Todo() {
                   </div>
                   {todo.inputs.map((input, index) => {
                     return (
-                      <div key={index} className="break-all box-border">
-                        {input}
+                      <div
+                        key={index}
+                        className="break-all box-border flex justify-start items-center relative"
+                      >
+                        <div
+                          className={
+                            todo.name === "ToDo"
+                              ? "p-1 rounded-[50%] bg-blue-300 mr-1"
+                              : todo.name === "Doing"
+                              ? "p-1 rounded-[50%] bg-red-300 mr-1"
+                              : todo.name === "Done"
+                              ? "p-1 rounded-[50%] bg-green-300 mr-1"
+                              : "hidden"
+                          }
+                        ></div>
+                        <div
+                          onMouseOver={() => showOptFunc(index)}
+                          onMouseOut={hideOptFunc}
+                        >
+                          {input}
+                        </div>
+                        <div
+                          onMouseOver={() => setAfterShow(true)}
+                          onMouseOut={() => setAfterShow(false)}
+                          className={
+                            showOpt === index
+                              ? "absolute left-10 top-5 box-border bg-gray-200 rounded-md p-3"
+                              : afterShow
+                              ? "absolute left-10 top-5 box-border bg-gray-200 rounded-md p-3"
+                              : "hidden"
+                          }
+                        >
+                          <div className={""}>
+                            <div className="hover:bg-gray-500 hover:text-white hover:rounded-md hover: p-2">
+                              ToDo
+                            </div>
+                            <div className="hover:bg-gray-500 hover:text-white hover:rounded-md hover: p-2">
+                              Doing
+                            </div>
+                            <div className="hover:bg-gray-500 hover:text-white hover:rounded-md hover: p-2">
+                              Done
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     );
                   })}

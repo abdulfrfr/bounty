@@ -48,7 +48,7 @@ function ReadingList({ bookEdit, setBookEdit }) {
       >
         <BsChevronDoubleDown
           onClick={() => setBookEdit(false)}
-          className={""}
+          className={"block sm:hidden "}
         />
 
         <div>
