@@ -65,6 +65,14 @@ function Todo() {
     setAfterShow("");
   }
 
+  function removeItem(todo, todoName, index) {
+    if (todo.name === todoName) {
+      todo.inputs.splice(index, 1);
+    }
+
+    setAfterShow("");
+  }
+
   return (
     <section className="pt-20 w-full ">
       <DashboardHead className="w-full" />
@@ -137,7 +145,7 @@ function Todo() {
                     return (
                       <div
                         key={InputIndex}
-                        className="mt-5 cursor-pointer hover:bg-blue-500 break-all box-border flex justify-start items-center relative"
+                        className="mt-5 cursor-pointer break-all box-border flex justify-start items-center relative"
                       >
                         <div
                           className={
@@ -161,9 +169,9 @@ function Todo() {
                           onMouseOut={() => setAfterShow("")}
                           className={
                             inputName === input
-                              ? "absolute left-8 top-5 box-border bg-gray-200 rounded-md p-3"
+                              ? "absolute left-8 top-5 box-border bg-gray-200 rounded-md p-3 z-10 text-sm"
                               : afterShow === input
-                              ? "absolute left-8 top-5 box-border bg-gray-200 rounded-md p-3"
+                              ? "absolute left-8 top-5 box-border bg-gray-200 rounded-md p-3 z-10 text-sm"
                               : "hidden"
                           }
                         >
@@ -212,6 +220,14 @@ function Todo() {
                               className="hover:bg-gray-500 hover:text-white hover:rounded-md hover: p-2"
                             >
                               Done
+                            </div>
+                            <div
+                              onClick={() =>
+                                removeItem(todo, todo.name, InputIndex)
+                              }
+                              className="hover:bg-gray-500 hover:text-white hover:rounded-md hover: p-2"
+                            >
+                              Delete
                             </div>
                           </div>
                         </div>

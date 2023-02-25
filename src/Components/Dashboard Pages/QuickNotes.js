@@ -1,7 +1,8 @@
-import { useReducer, useState } from "react";
+import { useReducer, useState, useEffect } from "react";
 import { MdOutlineImage } from "react-icons/md";
 import ContentEditable from "react-contenteditable";
 import { alertItems } from "./QuickPostItems";
+import { getLinkPreview, getPreviewFromContent } from "link-preview-js";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -13,12 +14,19 @@ function reducer(state, action) {
 }
 
 function QuickNotes() {
+  const [link, setLink] = useState("");
   const [alert, dispatch] = useReducer(reducer, alertItems);
   const [checkValue, setCheckValue] = useState({
     launch: "Launch",
     break: "Break",
     friend: "Friend",
   });
+
+  useEffect(() => {
+    getLinkPreview("https://twitter.com/abdulfrfr").then((data) =>
+      console.debug(data)
+    );
+  }, []);
 
   function getEditables(event) {
     const value = event.target.value;
